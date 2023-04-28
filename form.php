@@ -26,6 +26,7 @@ if (!empty($messages)) {
       $stmt->execute();
       $result = $stmt->fetchAll();
     ?>
+      <div class="wrapper">
     <div class="content">
     <h1><a id="forma"></a>Форма:</h1>
       <form action="index.php" method="POST">
@@ -65,12 +66,13 @@ if (!empty($messages)) {
       </form>
     </div>
     <?php if (!empty($_SESSION['login'])){ ?>
-      <form action="logout.php">
-      <button type="submit" name = "SignOut">Выйти</button>
-    </form>
-    <?php } else { ?>
-      <form action="login.php">
-      <button type="submit">Войти</button>
-      <?php } ?>
+        <form action="logout.php">
+          <button type="submit" name ="SignOut">Выйти</button>
+      </form>
+      <?php } else { ?>
+        <form action="login.php">
+          <button type="submit" name ="SignIn">Войти</button>
+        <?php } ?>
+        </div>
   </body>
 </html>
